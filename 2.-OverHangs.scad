@@ -2,21 +2,42 @@
   * How does your printer handle overhang?  
   *   The rumour is 45 degrees and less should be safe.
   */
+/* [Global] */
 
-$fn=200;
+// The quality of circular lines.
+$fn=200; // [60:300]
 
-gNumTowers = 8;
-gMaxOverHang = 90;
-gMinOverHang = 0;
+/* [Towers] */
 
-gCylinderHeight=5;
-gCylinderRadius=20;
+// How many towers should I build?
+gNumTowers = 8; // [1:100]
 
-gTowerDimension=5;
-gTowerHeight=20;
-gTowerLedge=gTowerHeight;
+// What's the maximum angle of overhang allowed?
+gMaxOverHang = 90; // [-360:360]
 
+// What's the minimum angle of overhang allowed?
+gMinOverHang = 0; // [-360:360]
+
+// The singular dimension in mm used for the tower's x and y
+gTowerDimension=5; // [0.1 : 50]
+
+// The tower's height in mm.
+gTowerHeight=20; // [0.1 : 100]
+
+// How long is the ledge off the tower, in mm
+gTowerLedge=gTowerHeight; // [0.1 : 100]
+
+/* [Cylinder Base] */
+
+// How tall the cylindrical base is, in mm.
+gCylinderHeight=2; // [0.1 : 20]
+
+// The radius of the base, in mm.  Will have the center carved out to minimize plastic waste.
+gCylinderRadius=20; // [10 : 100]
+
+/* [Hidden] */
 tinyValue=0.01;
+
 // Bottom plate
 difference()
 {
